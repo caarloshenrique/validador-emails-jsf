@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <head>
+        <title>Validador de E-mails Customizado</title>
+        <link rel="stylesheet" type="text/css" href="css/styles.css" media="all" />
+        <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css' />
+    </head>
+    <body>
+        <div id="home">
+            <h1 class="title">Validador de E-mails</h1>
+            <br />
+            <br />
+        <div id="description">
+        <h:form>
+            <h:outputLabel class="paragraph" value="Digite um e-mail: " for="email" />
+            <br />
+            <h:inputText value="#{testeBean.email}" id="email" class="input">
+                <f:validator validatorId="br.com.validadoremail.validators.ValidadorEmail" />
+            </h:inputText>
+            <br />
+            <h:commandButton class="button" value="Enviar" />
+            <br />
+            <br />
+            <div id="message">
+                <h:message for="email" style="color: #fff" />
+            </div>
+        </h:form>
+        </div>
+        </div>
+    </body>
+</html>
+
